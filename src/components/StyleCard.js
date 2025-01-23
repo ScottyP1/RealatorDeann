@@ -1,21 +1,19 @@
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
+import { Box } from '@mui/material';
 
-export default function StyleCard({ title, description, bgColor, bgImg, align, logo }) {
+export default function StyleCard({ title, description, bgColor, bgImg, logo }) {
     return (
-        <Card className="w-[450px] h-[450px] overflow-hidden mx-4 mb-8">
-            {/* Width adjusts based on screen size */}
+        <Card className="w-[400px] md:w-[450px] h-[450px] overflow-hidden mx-4 mb-8">
             <CardContent
-                className={`w-full h-full flex flex-col items-center justify-center ${!bgImg && bgColor} text-white`}
+                className={`h-full flex flex-col items-center justify-center ${!bgImg && bgColor} text-white`}
                 style={
                     bgImg
                         ? {
                             backgroundImage: `url(${bgImg})`,
                             backgroundSize: 'cover',
                             backgroundPosition: 'center',
-                            backgroundAttachment: 'fixed',
                         }
                         : {}
                 }
@@ -23,26 +21,29 @@ export default function StyleCard({ title, description, bgColor, bgImg, align, l
                 {bgImg ? (
                     <>
                         {/* Logo */}
-                        <img src={logo} alt="Logo" className="w-[300px] h-[200px]" />
+                        <img
+                            src={logo}
+                            alt="Logo"
+                            className="w-[80%] max-w-[300px] h-auto mb-4"
+                        />
                     </>
                 ) : (
                     <>
                         {/* Title */}
-                        <Typography
-                            gutterBottom
+                        <Box
                             variant="h4"
                             component="div"
-                            className="font-bold text-center"
+                            className="font-bold text-center mb-2"
                         >
                             {title}
-                        </Typography>
+                        </Box>
                         {/* Description */}
-                        <Typography
+                        <Box
                             variant="body1"
                             className="text-gray-600 px-4 text-center"
                         >
                             {description}
-                        </Typography>
+                        </Box>
                     </>
                 )}
             </CardContent>

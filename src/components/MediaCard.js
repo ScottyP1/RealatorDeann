@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 
 import { IoBedOutline } from "react-icons/io5";
 import { PiBathtubLight } from "react-icons/pi";
+import { Box } from '@mui/material';
 
 export default function MediaCard({ imageSrc, price, address, bed, bath }) {
     return (
@@ -22,14 +23,14 @@ export default function MediaCard({ imageSrc, price, address, bed, bath }) {
                     <Typography variant="body2" className="text-gray-400">
                         {address}
                     </Typography>
-                    <Typography variant="body2" className="text-black flex items-center">
+                    <Box variant="body2" className="text-black flex items-center">
                         <span className="flex items-center mr-6">
                             {bed} <IoBedOutline size={24} className='ml-2' />
                         </span>
                         <span className="flex items-center">
                             {bath} <PiBathtubLight size={24} className="ml-2" />
                         </span>
-                    </Typography>
+                    </Box>
                 </CardContent>
             </Card>
         </div>

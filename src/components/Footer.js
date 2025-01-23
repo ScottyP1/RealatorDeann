@@ -1,4 +1,5 @@
 
+import Link from "next/link";
 import { CiLinkedin, CiInstagram } from "react-icons/ci";
 
 export default function Footer({ id }) {
@@ -16,6 +17,7 @@ export default function Footer({ id }) {
                     />
                     <h2 className="mt-4 text-2xl font-semibold text-white">Deanna Rothstein</h2>
                     <p className="text-lg text-white mt-2">Real Estate Agent</p>
+                    <p className="text-gray-300">PSA - Pricing Strategy Advisor, MRP - Military Relocation Professional</p>
                 </div>
                 {/* Middle Column (Contact Information) */}
                 <div className="flex flex-col justify-center space-y-4">
@@ -43,22 +45,22 @@ export default function Footer({ id }) {
                 <div className="flex flex-col justify-center items-center">
                     <h3 className="text-xl font-semibold text-white">Follow Me</h3>
                     <div className="flex space-x-4 mt-4">
-                        <a
+                        <Link
                             href="https://www.linkedin.com/in/deanna-rothstein-428b68b6/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-blue-500 hover:underline"
                         >
                             <CiLinkedin size={60} />
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             href="https://www.instagram.com/deannasmdhomes/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-black hover:underline"
                         >
                             <CiInstagram size={60} />
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
